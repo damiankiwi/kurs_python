@@ -1,2 +1,2 @@
 ﻿# kurs_python
- to sąmoje notatki z kursu
+ to są moje notatki z kursu
