@@ -16,7 +16,7 @@ string1 = slice(0, len(quote)//2)
 print(quote[string1])
 
 #Wyświetl tylko kropkę
-print(quote[-1:])
+print(quote[-1])
 
 #Wyświetl od połowy tylko co trzecią literę cytatu
 string2 = slice(len(quote)//2, len(quote))
@@ -24,9 +24,11 @@ string2 = slice(len(quote)//2, len(quote))
 """print(quote[string2])""" #tekst od polowy
 print((quote[string2])[2::3])
 
+#ter in the book of wisdom.
+#te(r) i(n) t(h)e (b)oo(k) o(f) w(i)sd(o)m.   <-- co trzecią literę cytatu
+
 #Wyświetl ‘Hnsyi h is hpe ntebo fwso.’
-quote2 = "Hnsyi h is hpe ntebo fwso."
-print(quote2)
+print(quote[::2])
 
 #Wyświetl cały cytat odwrotnie
 print((quote)[::-1])
