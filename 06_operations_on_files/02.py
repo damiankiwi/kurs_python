@@ -3,25 +3,15 @@ import time
 
 quotes_file = "quotes.txt"
 
-# Pozyskiwanie bieżącej ścieżki dostępu za pomocą funkcji os.getcwd:
+# ścieżka dostępu:
 print(os.getcwd())
 
-#Zmiana ścieżki dostępu za pomocą funkcji os.chdir:
-os.chdir("C:/")
-print(os.getcwd())
-
-# Uzyskanie listy plików i folderów zawartych w danej lokalizacji za pomocą funkcji os.listdir:
+# lista plików i folderów zawartych w danej lokalizacji:
 l = list(os.listdir())
 print(l)
 
-# Pozyskanie rozmiaru pliku w bajtach za pomocą funkcji os.path.getsize:
+# rozmiaru pliku w bajtach:
 print(f'Rozmiar pliku {quotes_file} wynosi {os.path.getsize("quotes.txt")} bajtów')
 
-# Pozyskanie daty utworzenia pliku za pomocą funkcji os.path.getctime:
+# data utworzenia pliku:
 print(time.ctime(os.path.getctime(quotes_file)))
-
-# Usuwanie pliku za pomocą funkcji os.remove:
-with open("plik.txt", "w", encoding='utf-8') as fp:
-    fp.write("jakiś tam tekst")
-
-os.remove("plik.txt")
