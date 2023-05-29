@@ -1,30 +1,89 @@
-# Wisielec.
-# Utwórz plik zawierający listę słów wg. kategorii np. zwierzęta, owoce etc.
+# # Wisielec.
+# # Utwórz plik zawierający listę słów wg. kategorii np. zwierzęta, owoce etc.
+#
+# # Poproś użytkownika o podanie kategorii przed rozpoczęciemy gry.
+# """
+# Podaj kategorię:
+# 1 - zwierzęta
+# 2 - owoce
+# 3 - warzywa
+# """
+#
+# # <- 1
+#
+# # Następny wczytaj listę haseł do programu, wylosuj jedno hasło z listy.
+# # - wyczutjemy linijkę "0" z pliku i dzielimy znakiem podziału
+# # Stworzona lista elementów
+#
+# # użytkownik ma 6 żyć
+#
+# # Wylosować 1 słowo "to_guess_word"
+#
+# # Przedstawić jako - - - - - - - "hidden_word"
+#
+# # Zapytac użytkownika o literkę
+#
+# # - jak zgadnie literkęto podmienić - - - a - - - a
+# # jak nie trafi to odjąć mu życie
+#
+# # Na koniec sprawdzić czy wykorzystał życia
+# # - jęsli tak to "game over"
 
-# Poproś użytkownika o podanie kategorii przed rozpoczęciemy gry.
-"""
-Podaj kategorię:
-1 - zwierzęta
-2 - owoce
-3 - warzywa
-"""
+import random
 
-# <- 1
+print("Witaj w grze wisielec, słowo do odgadnięcia z dziedziny ZWIERZĘTA")
 
-# Następny wczytaj listę haseł do programu, wylosuj jedno hasło z listy.
-# - wyczutjemy linijkę "0" z pliku i dzielimy znakiem podziału
-# Stworzona lista elementów
+filename = 'animals.txt'
+def words_input():
+    with open(filename, 'r', encoding = 'utf-8') as f:
+        load_words = f.read().splitlines()
+    return load_words
 
-# użytkownik ma 6 żyć
+def read_words(filename) -> list:
+    with open(filename, encoding = 'utf-8') as fp:
+        content = fp.read().splitlines()
+    return content
 
-# Wylosować 1 słowo "to_guess_word"
+words_game = read_words('animals.txt')
+words_ask = []
+words_list = []
+game_chances = 6
 
-# Przedstawić jako - - - - - - - "hidden_word"
 
-# Zapytac użytkownika o literkę
+def generate(words_to_generate):
+    guess = random.choice(words_to_generate)
+    words = [guess]
+    for i in range(len(words[0])):
+        words_list.append(words[0][i])
+    for i in range(len(words[0])):
+        words_ask.append('-')
+    return guess
 
-# - jak zgadnie literkęto podmienić - - - a - - - a
-# jak nie trafi to odjąć mu życie
+secret_word = generate(words_game)
+# print(secret_word)
 
-# Na koniec sprawdzić czy wykorzystał życia
-# - jęsli tak to "game over"
+def game(guess_word, game_chances):
+    print('Długość słowa', len(words_ask))
+    while game_chances > 0:
+        letter = (input(f'Podaj literę lub słowo aby odgadnąć hasło, masz {game_chances} szans: '))
+        letter = letter.lower()
+        game_chances -= 1
+        if letter == guess_word:
+            print('ZGADŁEŚ HASŁO PO SŁOWIE GRATULACJE, wylosowane hasło to:', guess_word)
+            break
+
+        else:
+            for x in range(len(words_list)):
+                if words_list[x] == letter:
+                     words_ask[x] = letter
+
+            print(words_ask)
+            if words_ask == words_list:
+                print('Hasło odgadnięte, wylosowane hasło to:', guess_word)
+                break
+
+            if game_chances == 0:
+                print('Koniec gry, skończyły się Tobie szanse, hasło to :', guess_word)
+
+
+game(secret_word, game_chances)
