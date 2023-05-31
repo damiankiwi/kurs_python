@@ -31,12 +31,14 @@
 
 import random
 
-print("Witaj w grze wisielec, słowo do odgadnięcia z dziedziny ZWIERZĘTA")
+print("Witaj w grze wisielec")
+print("Kategorie: \n1. animals \n2. fruits")
 
-filename = 'animals.txt'
 def words_input():
-    with open(filename, 'r', encoding = 'utf-8') as f:
+    filename = input('Podaj nazwe kategorii (bez rozszerzenia txt): ')
+    with open(f'{filename}.txt', encoding = 'utf-8') as f:
         load_words = f.read().splitlines()
+
     return load_words
 
 def read_words(filename) -> list:
@@ -44,7 +46,7 @@ def read_words(filename) -> list:
         content = fp.read().splitlines()
     return content
 
-words_game = read_words('animals.txt')
+words_game = words_input()
 words_ask = []
 words_list = []
 game_chances = 6
