@@ -1,0 +1,3 @@
+ValueError: could not convert string to float: ' '
+ValueError: could not convert string to float: '%'
+ValueError: could not convert string to float: 'o'
