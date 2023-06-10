@@ -1,3 +1,4 @@
 ValueError: could not convert string to float: ' '
 ValueError: could not convert string to float: '%'
 ValueError: could not convert string to float: 'o'
+ValueError: Podano za mało wartości
