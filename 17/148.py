@@ -17,3 +17,4 @@ max_wartosc, min_wartosc = znajdz_max_i_min(liczby)
 
 print("Maksymalna wartość:", max_wartosc)
 print("Minimalna wartość:", min_wartosc)
+
