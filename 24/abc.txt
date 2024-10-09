@@ -1,2 +1,6 @@
-Python Exercises
-Java Exercises
+Red
+Green
+White
+Black
+Pink
+Yellow
