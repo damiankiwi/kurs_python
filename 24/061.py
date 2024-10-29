@@ -1,5 +1,11 @@
 import csv
-data = csv.DictReader(open("departments.csv"))
-print("CSV file as a dictionary:\n")
-for row in data:
-   print(row)
+print("\nWith initial spaces after a delimiter:\n")
+with open('departments.csv', 'r') as csvfile:
+   data = csv.reader(csvfile, skipinitialspace=False)
+   for row in data:
+     print(', '.join(row))
+print("\n\nWithout initial spaces after a delimiter:\n")
+with open('departments.csv', 'r') as csvfile:
+   data = csv.reader(csvfile, skipinitialspace=True)
+   for row in data:
+     print(', '.join(row))
