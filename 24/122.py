@@ -8,4 +8,4 @@ def snake_case(s):
 
 print(snake_case('JavaScript'))
 print(snake_case('GDScript'))
-print(snake_case('BTW...what *do* you call that naming style? snake_case? '))
+print(snake_case('BTW...what *do* you call that naming style? snake_case? ')) 
