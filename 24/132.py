@@ -19,6 +19,7 @@ def gap_InsertionSort(nlist,start,gap):
 
         nlist[position]=current_value
 
+
 nlist = [14,46,43,27,57,41,45,21,70]
 shellSort(nlist)
 print(nlist)
