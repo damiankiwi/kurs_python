@@ -34,5 +34,5 @@ def treesort(arr):
     res = []
     inorder(root, res)
     return res
-#print
+
 print(treesort([7, 1, 5, 2, 19, 14, 17]))
