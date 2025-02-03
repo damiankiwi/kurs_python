@@ -11,5 +11,3 @@ print("Original unsorted array:")
 print(arra_nums)
 print("The said array after applying Wiggle sort:")
 print(wiggle_sort(arra_nums))
-
-# 1 5 2 3 4 6
