@@ -12,7 +12,6 @@ def closest_value(root, target):
     b = closest_value(kid, target)
     return min((a, b), key=lambda x: abs(target - x))
 
-
 root = TreeNode(8)
 root.left = TreeNode(5)
 root.right = TreeNode(14)
