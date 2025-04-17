@@ -1,6 +1,5 @@
 import bisect
 my_list = [25, 45, 36, 47, 69, 48, 68, 78, 14, 36]
-
 print("Original List:")
 print(my_list)
 sorted_list = []
